@@ -1,6 +1,10 @@
-# GeoDjango-Docker
+# Docker for GeoDjango with PostGIS and SpatiaLite
 
 Test environment for GeoDjango projects with PostGIS and SpatiaLite support out of the box.
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
+[![Docker Stars](https://img.shields.io/docker/stars/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
+[![Docker Automated buil](https://img.shields.io/docker/automated/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
 
 ## BitBucket Pipelines support
 
