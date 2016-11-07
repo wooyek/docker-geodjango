@@ -1,6 +1,6 @@
-# geodjango-docker
+# GeoDjango-Docker
 
-Test environment for geodjango projects with postgis and spatialile support out of the box
+Test environment for GeoDjango projects with PostGIS and SpatiaLite support out of the box.
 
 ## BitBucket Pipelines support
 
