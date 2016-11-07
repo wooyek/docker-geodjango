@@ -34,10 +34,12 @@ skipsdist = True
 [testenv]
 passenv =
     DJANGO_SETTINGS_MODULE
-    DATABASE_HOST
     DATABASE_PASSWORD
-    DATABASE_NAME
     DATABASE_USER
+    DATABASE_HOST
+    DATABASE_NAME
+    DATABASE_TEST_NAME
+    
 
 setenv =
     TOX_ENVBINDIR = {envbindir}
