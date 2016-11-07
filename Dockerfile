@@ -20,9 +20,7 @@ RUN apt-get -y update && \
     pip install invoke pathlib tox coverage pylint -U && \
     pip3 install invoke tox coverage pylint -U
 
-
 ENV PYTHONIOENCODING=utf-8
-
 
 # Pass this envrioment variables through a file
 # https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file
@@ -34,4 +32,5 @@ ENV DATABASE_PASSWORD=application-db-password
 ENV DATABASE_USER=application-user-user
 ENV DATABASE_HOST=127.0.0.1
 
+COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
