@@ -4,7 +4,7 @@ Test environment for GeoDjango projects with PostGIS and SpatiaLite support out 
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
 [![Docker Stars](https://img.shields.io/docker/stars/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
-[![Docker Automated buil](https://img.shields.io/docker/automated/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
+[![Docker Automated build](https://img.shields.io/docker/automated/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
 
 ## BitBucket Pipelines support
 
@@ -16,8 +16,10 @@ image: wooyek/geodjango
 pipelines:
   default:
     - step:
-        script:
-          - tox
+      script:        
+        # Pipelines overrides default docker entry point, we need to run it maually
+        - docker-entrypoint.sh  
+        - tox
 ```
  
 ## Tox support
