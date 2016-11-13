@@ -12,7 +12,8 @@ RUN apt-get -y update && \
     python python-dev python-pip python-virtualenv supervisor \
     python3 python3-dev python3-pip python3-venv \
     postgresql postgresql-contrib postgis \
-    libsqlite3-mod-spatialite && \
+    libsqlite3-mod-spatialite \
+    libgdal-dev gdal-bin && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
     apt-get clean && \
