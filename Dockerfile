@@ -30,7 +30,7 @@ ENV DATABASE_NAME=application-db \
     DATABASE_TEST_NAME=test_application-db \
     DATABASE_PASSWORD=application-db-password \
     DATABASE_USER=application-user-user \
-    DATABASE_HOST=127.0.0.1 
+    DATABASE_HOST=127.0.0.1
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
