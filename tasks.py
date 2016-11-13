@@ -37,13 +37,13 @@ def bump(ctx, patch=False):
     ctx.run("git push origin develop --verbose")
 
 
-def push(ctx, branch='develop', remote='staging'):
+def push(ctx, branch='develop', remote='origin'):
     ctx.run("git checkout {branch}".format(branch=branch))
     ctx.run("git push {remote} {branch}  --verbose".format(remote=remote, branch=branch))
 
 
 @task(bump)
-def release(ctx, branch='develop', remote='staging'):
+def release(ctx, branch='develop', remote='origin'):
     """
     Collect and compile assets, add, commit and push to production remote
     """
