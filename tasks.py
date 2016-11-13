@@ -17,7 +17,7 @@ from invoke import task
 
 
 @task
-def bump(ctx, patch=False):
+def bump(ctx, patch=True):
     """
     Make sure that develop and master are in sync then bump version
     """
@@ -28,7 +28,7 @@ def bump(ctx, patch=False):
     ctx.run("git merge develop --verbose")
     ctx.run("git pull origin master --verbose")
     if patch:
-        ctx.run("bumpversion patch --no-tag")
+        ctx.run("bumpversion patch")
     else:
         ctx.run("bumpversion minor")
     ctx.run("git push origin master --verbose")
