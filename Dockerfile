@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 MAINTAINER Janusz Skonieczny @wooyek
-LABEL version="0.9.2"
+LABEL version="0.9.3"
 
 # Install tooling for test debuging and libraries needed by geodjango.
 RUN apt-get -y update && \
