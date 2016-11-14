@@ -18,6 +18,10 @@ echo "Creating databases ${DATABASE_NAME} and ${DATABASE_TEST_NAME}"
 sudo -u postgres -E sh -c 'createdb ${DATABASE_NAME}'
 sudo -u postgres -E sh -c 'createdb ${DATABASE_TEST_NAME}'
 
+echo "*** Setting up GDAL support ***"
+export CPLUS_INCLUDE_PATH=/usr/include/gdal
+export C_INCLUDE_PATH=/usr/include/gdal
+
 echo "*** Running command passed down to docker ***"
 exec "$@"
 
