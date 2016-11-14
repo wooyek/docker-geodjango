@@ -19,6 +19,8 @@ RUN apt-get update && apt-get -y upgrade && \
     pip install invoke pathlib tox coverage pylint -U && \
     pip3 install invoke tox coverage pylint -U
 
+
+
 ENV PYTHONIOENCODING=utf-8
 
 # Pass this envrioment variables through a file
