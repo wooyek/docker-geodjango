@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 MAINTAINER Janusz Skonieczny @wooyek
 LABEL version="0.9.4"
 
+
 # Install tooling for test debuging and libraries needed by geodjango.
 RUN apt-get update && apt-get -y upgrade && \
     apt-get install -y git unzip nano wget sudo curl build-essential \
@@ -18,8 +19,6 @@ RUN apt-get update && apt-get -y upgrade && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     pip install invoke pathlib tox coverage pylint -U && \
     pip3 install invoke tox coverage pylint -U
-
-
 
 ENV PYTHONIOENCODING=utf-8
 
