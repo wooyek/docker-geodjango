@@ -32,6 +32,6 @@ ENV DATABASE_NAME=application-db \
     DATABASE_HOST=127.0.0.1 \
     DATABASE_TEST_NAME=application-test-db
 
-COPY docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-ENTRYPOINT ["docker-entrypoint.sh"]
+COPY geodjango-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/geodjango-entrypoint.sh
+ENTRYPOINT ["geodjango-entrypoint.sh"]
