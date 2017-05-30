@@ -9,6 +9,7 @@ RUN apt-get update && apt-get -y upgrade && \
     apt-get install -y git unzip nano wget sudo curl build-essential \
     python python-dev python-pip python-virtualenv \
     python3 python3-dev python3-pip python3-venv \
+    python3.6 python3.6-dev python3.6-pip python3.6-venv \
     spatialite-bin libsqlite3-mod-spatialite \
     postgresql-client-common libpq-dev \
     postgresql postgresql-contrib postgis \
