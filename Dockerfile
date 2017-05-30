@@ -31,7 +31,8 @@ ENV DATABASE_NAME=application-db \
     DATABASE_PASSWORD=application-db-password \
     DATABASE_USER=application-user-user \
     DATABASE_HOST=127.0.0.1 \
-    DATABASE_TEST_NAME=application-test-db
+    DATABASE_TEST_NAME=application-test-db \
+    DATABASE_URL=postgis://application-user-user:application-db-password@127.0.0.1:5432/application-db
 
 COPY geodjango-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/geodjango-entrypoint.sh
