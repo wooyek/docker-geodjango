@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 MAINTAINER Janusz Skonieczny @wooyek
-LABEL version="0.9.7"
+LABEL version="0.9.8"
 
 # TODO: Install python3.6 python3.6-dev python3.6-pip python3.6-venv
 
