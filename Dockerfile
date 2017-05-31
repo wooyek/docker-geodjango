@@ -9,7 +9,7 @@ LABEL version="0.9.8"
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8 \
     LANGUAGE en_US:en \ 
-    LC_ALL en_US.UTF-8
+    LC_ALL en_US.UTF-8 \
     PYTHONIOENCODING=utf-8 \
     DATABASE_NAME=application-db \
     DATABASE_PASSWORD=application-db-password \
