@@ -20,7 +20,7 @@ RUN apt-get update && apt-get -y upgrade && \
     apt-get clean && \
     pip install invoke tox coverage pylint pathlib -U && \
     pip3 install invoke tox coverage pylint -U && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8 \
