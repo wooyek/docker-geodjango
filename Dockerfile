@@ -40,4 +40,4 @@ ENV LANG en_US.UTF-8 \
 
 COPY geodjango-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/geodjango-entrypoint.sh
-ENTRYPOINT ["geodjango-entrypoint.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
