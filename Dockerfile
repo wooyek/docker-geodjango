@@ -26,9 +26,9 @@ RUN apt-get update && apt-get -y upgrade && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV LANG en_US.UTF-8 \
-    LANGUAGE en_US:en \
-    LC_ALL en_US.UTF-8 \
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8 \
     PYTHONIOENCODING=utf-8 \
     DATABASE_NAME=application-db \
     DATABASE_PASSWORD=application-db-password \
@@ -38,6 +38,6 @@ ENV LANG en_US.UTF-8 \
     DATABASE_URL=postgis://application-user-user:application-db-password@127.0.0.1:5432/application-db
 
 
-COPY geodjango-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/geodjango-entrypoint.sh
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
