@@ -21,7 +21,7 @@ sudo -u postgres -E sh -c 'createdb ${DATABASE_TEST_NAME}'
 echo "*** Setting up GDAL support ***"
 export CPLUS_INCLUDE_PATH=/usr/include/gdal
 export C_INCLUDE_PATH=/usr/include/gdal
-echo "Please not system GDAL version"
+echo "Please note system GDAL version"
 gdal-config --version
 
 echo "*** Running command passed down to docker ***"
