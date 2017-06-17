@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:16.04
 
 MAINTAINER Janusz Skonieczny @wooyek
 LABEL version="0.9.14"
@@ -42,8 +42,8 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     locale-gen en_US.UTF-8 && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
-    pip  install invoke tox coverage pylint gdal==2 pathlib -U && \
-    pip3 install invoke tox coverage pylint gdal==2 -U && \
+    pip  install invoke tox coverage pylint gdal==1.11.3 pathlib -U && \
+    pip3 install invoke tox coverage pylint gdal==1.11.3 -U && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
