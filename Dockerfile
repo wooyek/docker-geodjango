@@ -34,7 +34,6 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     apt-get install -y git unzip nano wget sudo curl build-essential && \
     apt-get install -y python python-dev python-pip python-virtualenv \
     python3 python3-dev python3-pip python3-venv \
-    python3.6 python3.6-dev python3.6-venv \
     spatialite-bin libsqlite3-mod-spatialite \
     postgresql-client-common libpq-dev \
     postgresql postgresql-contrib postgis \
@@ -42,8 +41,8 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     locale-gen en_US.UTF-8 && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
-    pip  install invoke tox coverage pylint gdal==1.11.3 pathlib -U && \
-    pip3 install invoke tox coverage pylint gdal==1.11.3 -U && \
+    pip  install invoke tox coverage pylint gdal==1.11.2 pathlib -U && \
+    pip3 install invoke tox coverage pylint gdal==1.11.2 -U && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
