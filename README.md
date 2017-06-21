@@ -11,7 +11,7 @@ Test environment for GeoDjango projects with PostGIS and SpatiaLite support out 
 You can use this as a test image with BitBucket Pipelines, an example:
 
 ```
-image: wooyek/geodjango
+image: wooyek/geodjango:ubuntu-16.04
 
 pipelines:
   default:
