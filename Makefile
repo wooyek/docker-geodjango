@@ -21,7 +21,7 @@ sync: ## sync master and develop branches in both directions
 	git merge develop --verbose
 	git checkout develop
 
-release: sync bump build ## sync, bump and push docker image
+release: sync bump ## sync, bump and push to repo to trigger autmated build
 	git checkout develop
 	git merge master --verbose
 	git push origin develop --verbose
