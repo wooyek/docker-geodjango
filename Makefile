@@ -1,4 +1,4 @@
-.PHONY: help bump build sync release
+.PHONY: help bump build sync release test
 .DEFAULT_GOAL := help
 
 help:
@@ -27,4 +27,6 @@ release: sync bump build ## sync, bump and push docker image
 	git push origin develop --verbose
 	git push origin master --verbose
 
-
+test: ## run sample test inside a container
+	echo 'Running tox tests inside the container'
+	docker run --rm -it --name qa --volume=$(shell pwd):/vagrant --workdir="/vagrant" --entrypoint=/bin/bash -e DJANGO_SETTINGS_MODULE=website.settings wooyek/geodjango docker-entrypoint.sh tox -c /vagrant/sample/awesome-project
