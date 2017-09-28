@@ -26,6 +26,5 @@ release: sync bump build ## sync, bump and push docker image
 	git merge master --verbose
 	git push origin develop --verbose
 	git push origin master --verbose
-	docker push wooyek/geodjango
 
 
