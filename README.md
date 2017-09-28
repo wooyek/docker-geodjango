@@ -5,6 +5,7 @@ Test environment for GeoDjango projects with PostGIS and SpatiaLite support out 
 [![Docker Pulls](https://img.shields.io/docker/pulls/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
 [![Docker Stars](https://img.shields.io/docker/stars/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
 [![Docker Automated build](https://img.shields.io/docker/automated/wooyek/geodjango.svg)](https://hub.docker.com/r/wooyek/geodjango/)
+[![Travis](https://img.shields.io/travis/wooyek/docker-geodjango.svg)](https://travis-ci.org/wooyek/docker-geodjango)
 
 ## BitBucket Pipelines support
 
