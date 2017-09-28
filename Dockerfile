@@ -20,7 +20,7 @@ ENV LANG=en_US.UTF-8 \
     DATABASE_USER=application-user-user \
     DATABASE_HOST=127.0.0.1 \
     DATABASE_TEST_NAME=application-test-db \
-    DATABASE_URL=postgis://application-user-user:application-db-password@127.0.0.1:5432/application-db \
+    DATABASE_URL=postgis://application-user:application-db-password@127.0.0.1:5432/application-db \
     CPLUS_INCLUDE_PATH=/usr/include/gdal \
     C_INCLUDE_PATH=/usr/include/gdal
 
