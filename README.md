@@ -122,3 +122,13 @@ docker run --rm -it --name qa \
 ```
 
 There should be a one passed [test filtering on distance](sample/awesome-project/geoapp/tests.py).
+
+## Cleanup
+ 
+Docker images take some space, if you need to clear that out use one of those prune commands:
+
+```bash
+docker system prune
+docker image prune
+docker container prune
+```
