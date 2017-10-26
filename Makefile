@@ -8,7 +8,7 @@ bump: ## incremenet version number
 	bumpversion patch
 
 build: ## build docker container image
-	docker build -t wooyek/geodjango .
+	docker build -t wooyek/geodjango:ubuntu-16.04 .
 
 sync: ## sync master and develop branches in both directions
 	git checkout develop
