@@ -1,8 +1,7 @@
 FROM ubuntu:16.04
 
 MAINTAINER Janusz Skonieczny @wooyek
-# Indicate GDAL major.minor version
-LABEL version="2.0.23"
+LABEL version="0.9.14"
 
 # Pass the above envrioment variables through a file to the docker vm
 # https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file
@@ -42,8 +41,8 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     locale-gen en_US.UTF-8 && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
-    pip  install invoke tox coverage pylint gdal==2 pytest pytest-xdist pathlib -U && \
-    pip3 install invoke tox coverage pylint gdal==2 pytest pytest-xdist -U && \
+    pip  install invoke tox coverage pylint gdal==1.11.2 pytest pytest-xdist pathlib -U && \
+    pip3 install invoke tox coverage pylint gdal==1.11.2 pytest pytest-xdist -U && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
