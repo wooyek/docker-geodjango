@@ -13,22 +13,24 @@ echo "${USER} ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers.d/${USER}
 
 # Change Time Zone
 # dpkg-reconfigure tzdata
+
 sudo timedatectl set-timezone Europe/Warsaw
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common python
+
+source /etc/os-release
+echo $UBUNTU_CODENAME
 
 # ======================================
 # Docker
-# https://docs.docker.com/engine/installation/linux/ubuntulinux/#/install
+# https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce
 # ======================================
-sudo apt-get install -y apt-transport-https ca-certificates
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
-sudo apt-get update
-sudo apt-get -y install linux-image-extra-$(uname -r) linux-image-extra-virtual
-sudo apt-get -y install docker-engine
-sudo service docker start
-sudo groupadd docker
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $UBUNTU_CODENAME stable"
+sudo apt-get update -y
+sudo apt-get install -y docker-ce
 sudo usermod -aG docker $USER
-sudo systemctl enable docker
 
 SCRIPT
 

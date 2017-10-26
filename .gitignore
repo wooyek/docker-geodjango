@@ -1,2 +1,6 @@
 .idea/
 .vagrant/
+.tox
+.pve
+/environment.env
+

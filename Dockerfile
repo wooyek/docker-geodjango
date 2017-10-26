@@ -1,7 +1,8 @@
 FROM ubuntu:16.04
 
 MAINTAINER Janusz Skonieczny @wooyek
-LABEL version="0.9.14"
+# Indicate GDAL major.minor version
+LABEL version="2.0.23"
 
 # Pass the above envrioment variables through a file to the docker vm
 # https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file
@@ -16,10 +17,10 @@ ENV LANG=en_US.UTF-8 \
     PYTHONIOENCODING=utf-8 \
     DATABASE_NAME=application-db \
     DATABASE_PASSWORD=application-db-password \
-    DATABASE_USER=application-user-user \
+    DATABASE_USER=application-user \
     DATABASE_HOST=127.0.0.1 \
     DATABASE_TEST_NAME=application-test-db \
-    DATABASE_URL=postgis://application-user-user:application-db-password@127.0.0.1:5432/application-db \
+    DATABASE_URL=postgis://application-user:application-db-password@127.0.0.1:5432/application-db \
     CPLUS_INCLUDE_PATH=/usr/include/gdal \
     C_INCLUDE_PATH=/usr/include/gdal
 
@@ -31,7 +32,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     apt-get update && apt-get -y upgrade && \
     apt-get install -y locales && \
     locale-gen en_US.UTF-8 && \
-    apt-get install -y git unzip nano wget sudo curl build-essential && \
+    apt-get install -y git git-flow unzip nano wget sudo curl build-essential && \
     apt-get install -y python python-dev python-pip python-virtualenv \
     python3 python3-dev python3-pip python3-venv \
     spatialite-bin libsqlite3-mod-spatialite \
@@ -41,8 +42,8 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     locale-gen en_US.UTF-8 && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
-    pip  install invoke tox coverage pylint gdal==1.11.2 pathlib -U && \
-    pip3 install invoke tox coverage pylint gdal==1.11.2 -U && \
+    pip  install invoke tox coverage pylint gdal==2 pytest pytest-xdist pathlib -U && \
+    pip3 install invoke tox coverage pylint gdal==2 pytest pytest-xdist -U && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

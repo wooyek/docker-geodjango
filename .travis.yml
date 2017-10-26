@@ -1,0 +1,13 @@
+sudo: required
+dist: trusty
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - make build
+      - docker images
+      - make test
