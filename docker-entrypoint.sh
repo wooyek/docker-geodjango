@@ -5,7 +5,7 @@
 /etc/init.d/postgresql start
 
 echo "============================================="
-echo "Docker image wooyek/geodjango version: 0.9.15"
+echo "Docker image wooyek/geodjango version: 0.9.16"
 echo "============================================="
 echo "------> Setting up Postgres database"
 # First you need to enable postgis for all new databases. This will remove superuser requirement during db initialization
