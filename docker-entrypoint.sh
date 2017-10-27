@@ -32,7 +32,10 @@ tox --version
 git --version
 virtualenv --version
 python3 -m venv -h
-
+echo "------> Python 2 packages"
+pip2 freeze
+echo "------> Python 3 packages"
+pip3 freeze
 echo "------> Running command passed down to docker..."
 exec "$@"
 
