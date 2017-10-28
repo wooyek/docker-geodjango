@@ -41,7 +41,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     locale-gen en_US.UTF-8 && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
-    pip  install invoke tox coverage pylint gdal==1.11.2 pytest pytest-xdist pathlib -U && \
+    pip2  install invoke tox coverage pylint gdal==1.11.2 pytest pytest-xdist pathlib -U && \
     pip3 install invoke tox coverage pylint gdal==1.11.2 pytest pytest-xdist -U && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
