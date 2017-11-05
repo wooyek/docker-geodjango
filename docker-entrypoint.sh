@@ -24,6 +24,7 @@ echo "------> Please note system GDAL version"
 gdal-config --version
 
 echo "------> Please note tooling versions"
+which python
 python -V
 python3 -V
 easy_install --version
