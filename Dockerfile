@@ -34,8 +34,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     locale-gen en_US.UTF-8 && \
     apt-get install -y git git-flow unzip nano wget sudo curl build-essential && \
     apt-get install -y python python-dev python-pip python-virtualenv \
-    apt-get install -y python-enchant \
-    python3 python3-dev python3-pip python3-venv \
+    python3 python3-dev python3-pip python3-venv python-enchant \
     python3.6 python3.6-dev python3.6-venv \
     spatialite-bin libsqlite3-mod-spatialite \
     postgresql-client-common libpq-dev \
