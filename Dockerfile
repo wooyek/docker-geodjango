@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:18.04
 
 MAINTAINER Janusz Skonieczny @wooyek
 # Indicate GDAL major.minor version
