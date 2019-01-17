@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 MAINTAINER Janusz Skonieczny @wooyek
-LABEL version="2.1.1"
+LABEL version="2.1.2"
 
 # Pass the above envrioment variables through a file to the docker vm
 # https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file

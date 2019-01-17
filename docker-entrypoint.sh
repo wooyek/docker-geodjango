@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "============================================="
-echo "Docker image wooyek/geodjango version: 2.1.1"
+echo "Docker image wooyek/geodjango version: 2.1.2"
 echo "============================================="
 echo "------> Setting up Postgres database"
 /etc/init.d/postgresql start
