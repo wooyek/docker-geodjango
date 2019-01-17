@@ -24,8 +24,8 @@ sync: ## sync master and develop branches in both directions
 release: sync bump ## sync, bump and push to repo to trigger autmated build
 	git checkout develop
 	git merge master --verbose
-	git push origin develop --verbose
-	git push origin master --verbose
+	git push origin develop --verbose --follow-tags
+	git push origin master --verbose --follow-tags
 
 test: ## run sample test inside a container
 	echo 'Running tox tests inside the container'

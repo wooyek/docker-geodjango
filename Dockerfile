@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
 
 MAINTAINER Janusz Skonieczny @wooyek
-# Indicate GDAL major.minor version
 LABEL version="2.1.1"
 
 # Pass the above envrioment variables through a file to the docker vm
@@ -44,7 +43,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     libproj-dev libfreexl-dev libgdal-dev gdal-bin && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
-    pip  install invoke tox coverage pylint gdal==2 pytest pytest-xdist pathlib -U && \
+    pip2  install invoke tox coverage pylint gdal==2 pytest pytest-xdist pathlib -U && \
     pip3 install invoke tox coverage pylint gdal==2 pytest pytest-xdist -U && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

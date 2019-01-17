@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-# =========================
-# Setup Postgres data base
-# =========================
-/etc/init.d/postgresql start
-
 echo "============================================="
 echo "Docker image wooyek/geodjango version: 2.1.1"
 echo "============================================="
 echo "------> Setting up Postgres database"
+/etc/init.d/postgresql start
 # First you need to enable postgis for all new databases. This will remove superuser requirement during db initialization
 # http://stackoverflow.com/a/35209186/260480
 sudo -u postgres -E psql -d template1 -c "CREATE EXTENSION IF NOT EXISTS postgis;"
@@ -28,6 +24,7 @@ echo "------> Please note system GDAL version"
 gdal-config --version
 
 echo "------> Please note tooling versions"
+which python
 python -V
 python3 -V
 easy_install --version
@@ -36,7 +33,10 @@ tox --version
 git --version
 virtualenv --version
 python3 -m venv -h
-
+echo "------> Python 2 packages"
+pip2 freeze
+echo "------> Python 3 packages"
+pip3 freeze
 echo "------> Running command passed down to docker..."
 exec "$@"
 
