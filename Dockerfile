@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Janusz Skonieczny @wooyek
 # Indicate GDAL major.minor version
-LABEL version="2.1.0"
+LABEL version="2.1.1"
 
 # Pass the above envrioment variables through a file to the docker vm
 # https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file
