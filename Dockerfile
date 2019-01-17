@@ -23,12 +23,14 @@ ENV LANG=en_US.UTF-8 \
     DATABASE_URL=postgis://application-user:application-db-password@127.0.0.1:5432/application-db \
     CPLUS_INCLUDE_PATH=/usr/include/gdal \
     C_INCLUDE_PATH=/usr/include/gdal
+    TZ=UTC
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
 # Install tooling for test debuging and libraries needed by geodjango.
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
     apt-get update && apt-get -y upgrade && \
     apt-get install -y locales && \
     locale-gen en_US.UTF-8 && \
@@ -40,7 +42,6 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     postgresql-client-common libpq-dev \
     postgresql postgresql-contrib postgis \
     libproj-dev libfreexl-dev libgdal-dev gdal-bin && \
-    locale-gen en_US.UTF-8 && \
     python -m pip install pip -U && \
     python3 -m pip install pip -U && \
     pip  install invoke tox coverage pylint gdal==2 pytest pytest-xdist pathlib -U && \
