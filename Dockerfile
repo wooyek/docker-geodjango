@@ -41,9 +41,9 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     postgresql-client-common libpq-dev \
     postgresql postgresql-contrib postgis \
     libproj-dev libfreexl-dev libgdal-dev gdal-bin && \
-    python -m pip install pip -U && \
+    python2 -m pip install pip -U && \
     python3 -m pip install pip -U && \
-    pip3 install invoke tox coverage pylint gdal==2 pytest pytest-xdist -U && \
+    pip3 install setuptools invoke tox coverage pylint gdal==2 pytest pytest-xdist -U && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
