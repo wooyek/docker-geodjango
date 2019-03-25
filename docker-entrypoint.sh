@@ -25,9 +25,9 @@ gdal-config --version
 
 echo "------> Please note tooling versions"
 which python
-python -V
+python2 -V
+which python3
 python3 -V
-easy_install --version
 pip --version
 tox --version
 git --version
